@@ -1,0 +1,6 @@
+requests
+pyperclip
+elementpath
+django
+psycopg2
+sqlite-database
