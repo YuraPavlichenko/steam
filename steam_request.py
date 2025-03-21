@@ -97,15 +97,16 @@ def get_name_and_amount():
 
 
 def get_id_of_group_members():
-    url = "https://steamcommunity.com/groups/Natus-Vincere/memberslistxml/?xml=1&p=758"
+    url = "https://steamcommunity.com/groups/Natus-Vincere/memberslistxml/?xml=1&p=759"
     response = requests.get(url)
     if not check_status_code(response.status_code):
         print(f"Current Line: {inspect.currentframe().f_lineno}")
 
     tree = ElementTree.fromstring(response.content)
 
-    try:
-        for member in tree.findall("./members/steamID64"):
+    print(len(tree.findall("./members/steamID64")))
+    for member in tree.findall("./members/steamID64"):
+        try:
             user_id = member.text
             if check_visibility_status(user_id):
                 if check_profile_level(user_id):
@@ -115,9 +116,9 @@ def get_id_of_group_members():
                         get_name_and_amount()
                         calculate_total_amount_of_cases(user_id)
             time.sleep(3)
-    except Exception as Error:
-        print("This happend in 89 line")
-        print(Error)
+        except Exception as Error:
+            print("This happend in 89 line")
+            print(Error)
 
 
 def log_message(message, log_file="log.txt"):

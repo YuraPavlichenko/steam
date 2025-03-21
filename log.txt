@@ -1,0 +1,4 @@
+[2025-03-21 16:10:34] User 76561198103953462 has such amount of cases 3 that costs 16.14
+[2025-03-21 16:11:17] User 76561198103956996 has such amount of cases 1 that costs 3.76
+[2025-03-21 16:20:21] User 76561198103986579 has such amount of cases 4 that costs 14.02
+[2025-03-21 16:21:02] User 76561198103988825 has such amount of cases 4 that costs 13.52
